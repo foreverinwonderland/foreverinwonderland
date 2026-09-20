@@ -2,6 +2,8 @@
 <html>
 <title>my photos</title>
 <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
         body {
             cursor: url("littleblackstar.png"), auto;
@@ -101,6 +103,60 @@ document.addEventListener("mousemove", function(e) {
             top: 10%;
             width: 290px;
         }
+
+        /* ♡ MOBILE LAYOUT ♡ */
+
+@media screen and (max-width: 600px) {
+
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        min-height: 100% !important;
+        height: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        padding: 20px 0 40px !important;
+    }
+
+    /* Stack every photo wrapper vertically */
+    .photo-wrapper {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+
+        display: block !important;
+        width: 90% !important;
+        max-width: 350px !important;
+        height: auto !important;
+
+        margin: 0 auto 35px !important;
+    }
+
+    /* Override desktop positioning on every photo */
+    .photo-wrapper img,
+    .photo2,
+    .photo4,
+    .photo33 {
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+
+}
 
     </style>
 </head>
