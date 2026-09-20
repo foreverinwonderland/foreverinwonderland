@@ -1,71 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>★ welcome to wonderland!</title>
 
     <style>
         body {
+            margin: 0;
             cursor: url("littleblackstar.png"), auto;
         }
 
         a {
             cursor: url("littleblackstar.png"), auto;
         }
+
+        /* ♡ CENTER THE CAMERA ♡ */
+
+        .camera-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 100px;
+        }
+
+        .camera {
+            display: block;
+            width: 800px;
+            max-width: 90%;
+            height: auto;
+        }
+
+        /* ♡ MOBILE ADJUSTMENT ♡ */
+
+        @media screen and (max-width: 600px) {
+            .camera-container {
+                margin-top: 60px;
+            }
+
+            .camera {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
     </style>
 
 </head>
-<script>
-let lastX = 0;
-let lastY = 0;
 
-document.addEventListener("mousemove", function(e) {
-
-    const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
-
-    if (distance < 25) {
-        return;
-    }
-
-    lastX = e.clientX;
-    lastY = e.clientY;
-
-    const star = document.createElement("div");
-
-    star.innerHTML = Math.random() > 0.5 ? "★" : "✦";
-    star.style.position = "fixed";
-    star.style.left = e.clientX + "px";
-    star.style.top = e.clientY + "px";
-    star.style.pointerEvents = "none";
-    star.style.fontSize = (Math.random() * 8 + 7) + "px";
-    star.style.color = "black";
-    star.style.opacity = "0.8";
-    star.style.transition = "opacity 2.5s, transform 2.5s";
-    star.style.transform = "translate(-50%, -50%)";
-
-    document.body.appendChild(star);
-
-    setTimeout(function() {
-        star.style.opacity = "0";
-        star.style.transform = "translate(-50%, -80%) rotate(30deg)";
-    }, 50);
-
-    setTimeout(function() {
-        star.remove();
-    }, 2550);
-});
-</script>
 <body>
 
-<center style="margin-top: 100px;">
-    
-    <a href="menu.html">
-        <img src="CAMERA.png" width="800"
-        onmouseover="this.style.filter='drop-shadow(0 0 30px black)'"
-        onmouseout="this.style.filter='none'">
-    </a>
+    <!-- ♡ CAMERA LINK ♡ -->
 
-</center>
+    <div class="camera-container">
+        <a href="menu.html">
+            <img
+                class="camera"
+                src="CAMERA.png"
+                alt="Enter Wonderland"
+                onmouseover="this.style.filter='drop-shadow(0 0 30px black)'"
+                onmouseout="this.style.filter='none'"
+            >
+        </a>
+    </div>
+
+    <!-- ♡ STAR CURSOR TRAIL ♡ -->
+
+    <script>
+        let lastX = 0;
+        let lastY = 0;
+
+        document.addEventListener("mousemove", function(e) {
+
+            const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+
+            if (distance < 25) {
+                return;
+            }
+
+            lastX = e.clientX;
+            lastY = e.clientY;
+
+            const star = document.createElement("div");
+
+            star.innerHTML = Math.random() > 0.5 ? "★" : "✦";
+            star.style.position = "fixed";
+            star.style.left = e.clientX + "px";
+            star.style.top = e.clientY + "px";
+            star.style.pointerEvents = "none";
+            star.style.fontSize = (Math.random() * 8 + 7) + "px";
+            star.style.color = "black";
+            star.style.opacity = "0.8";
+            star.style.transition = "opacity 2.5s, transform 2.5s";
+            star.style.transform = "translate(-50%, -50%)";
+
+            document.body.appendChild(star);
+
+            setTimeout(function() {
+                star.style.opacity = "0";
+                star.style.transform = "translate(-50%, -80%) rotate(30deg)";
+            }, 50);
+
+            setTimeout(function() {
+                star.remove();
+            }, 2550);
+
+        });
+    </script>
 
 </body>
 
