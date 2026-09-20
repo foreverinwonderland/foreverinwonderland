@@ -182,40 +182,76 @@
             position: absolute;
         }
 
-    /* ♡ MOBILE LAYOUT ♡ */
+   /* ♡ MOBILE LAYOUT ♡ */
 
-   @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
     html, body {
-        margin: 0;
-        min-height: 100%;
-        height: auto;
-        overflow-x: hidden;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-height: 100% !important;
+        height: auto !important;
+        overflow-x: hidden !important;
     }
 
     body {
-        padding: 20px 0 40px;
+        padding: 20px 0 40px !important;
     }
 
+    /* Stack every photo wrapper vertically */
     .photo-wrapper {
         position: relative !important;
         left: auto !important;
+        right: auto !important;
         top: auto !important;
-        width: 90%;
-        max-width: 350px;
-        margin: 0 auto 35px;
+        bottom: auto !important;
+        transform: none !important;
+
+        display: block !important;
+        width: 90% !important;
+        max-width: 350px !important;
+        height: auto !important;
+
+        margin: 0 auto 35px !important;
     }
 
-    .photo-wrapper img {
+    /* Override desktop positioning on every image */
+    .photo-wrapper img,
+    .photo8,
+    .photo11,
+    .photo12,
+    .photo13,
+    .photo15,
+    .photo16,
+    .photo18,
+    .photo19,
+    .photo21,
+    .photo22,
+    .photo23,
+    .photo24,
+    .photo27,
+    .photo31,
+    .photo35,
+    .photo36,
+    .photo37,
+    .photo38,
+    .photo39,
+    .photo40 {
         position: static !important;
         left: auto !important;
+        right: auto !important;
         top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+
+        display: block !important;
         width: 100% !important;
-        max-width: 100%;
-        height: auto;
-        display: block;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 auto !important;
     }
 
+    /* Keep photo credits from affecting the layout */
     .photo-credit {
         max-width: 90%;
         box-sizing: border-box;
