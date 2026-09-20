@@ -2,6 +2,7 @@
 <html>
 <title>visuals</title>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <p><i>★ my visual inspirations ★</i></p>
     <p><i>★ from films, music videos, and my camera ★</i></p>
 
@@ -180,6 +181,52 @@
         .photo-wrapper {
             position: absolute;
         }
+
+    /* ♡ MOBILE LAYOUT ♡ */
+
+    @media screen and (max-width: 600px) {
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            height: auto;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding: 20px 0 40px;
+        }
+
+        /* Stack the photos vertically on phones */
+
+        .photo-wrapper {
+            position: relative !important;
+            left: auto !important;
+            top: auto !important;
+
+            width: 90%;
+            max-width: 350px;
+            margin: 0 auto 35px;
+        }
+
+        /* Make every photo fit inside the screen */
+
+        .photo-wrapper img {
+            display: block;
+            width: 100% !important;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* Keep photo credits positioned correctly */
+
+        .photo-credit {
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+
+    }
 
     </style>
 </head>
