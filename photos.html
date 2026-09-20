@@ -1,75 +1,16 @@
 <!DOCTYPE html>
-<html>
-<title>my photos</title>
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-        body {
-            cursor: url("littleblackstar.png"), auto;
-        }
+    <title>my photos</title>
 
-        a {
-            cursor: url("littleblackstar.png"), auto;
-        }
-    </style>
-
-</head>
-<script>
-let lastX = 0;
-let lastY = 0;
-
-document.addEventListener("mousemove", function(e) {
-
-    const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
-
-    if (distance < 25) {
-        return;
-    }
-
-    lastX = e.clientX;
-    lastY = e.clientY;
-
-    const star = document.createElement("div");
-
-    star.innerHTML = Math.random() > 0.5 ? "★" : "✦";
-    star.style.position = "fixed";
-    star.style.left = e.clientX + "px";
-    star.style.top = e.clientY + "px";
-    star.style.pointerEvents = "none";
-    star.style.fontSize = (Math.random() * 8 + 7) + "px";
-    star.style.color = "black";
-    star.style.opacity = "0.8";
-    star.style.transition = "opacity 2.5s, transform 2.5s";
-    star.style.transform = "translate(-50%, -50%)";
-
-    document.body.appendChild(star);
-
-    setTimeout(function() {
-        star.style.opacity = "0";
-        star.style.transform = "translate(-50%, -80%) rotate(30deg)";
-    }, 50);
-
-    setTimeout(function() {
-        star.remove();
-    }, 2550);
-});
-</script>
-</head>
-
-<!DOCTYPE html>
-<html>
-<title>visuals</title>
-<head>
-    <p><i>★ my photos ★</i></p>
-
-    <title>Photos</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-
         html, body {
             margin: 0;
+            min-height: 100%;
             overflow-x: hidden;
             cursor: url("littleblackstar.png"), auto;
         }
@@ -78,109 +19,117 @@ document.addEventListener("mousemove", function(e) {
             cursor: url("littleblackstar.png"), auto;
         }
 
-        a {
-            cursor: url("littleblackstar.png"), auto;
+        /* PAGE HEADING */
+        .page-heading {
+            margin: 8px;
+            font-style: italic;
         }
 
-        /* PHOTO POSITIONS */
+        /* DESKTOP PHOTO ARRANGEMENT */
+
+        .photo-wrapper {
+            position: absolute;
+        }
 
         .photo2 {
-            position: absolute;
-            left: 20%;
-            top: 10%;
+            display: block;
             width: 270px;
+            height: auto;
         }
 
         .photo4 {
-            position: absolute;
-            left: 2.5%;
-            top: 10%;
+            display: block;
             width: 222px;
+            height: auto;
         }
+
         .photo33 {
-            position: absolute;
-            left: 41%;
-            top: 10%;
+            display: block;
             width: 290px;
+            height: auto;
         }
 
         /* ♡ MOBILE LAYOUT ♡ */
 
-@media screen and (max-width: 600px) {
+        @media screen and (max-width: 600px) {
 
-    html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-        min-height: 100% !important;
-        height: auto !important;
-        overflow-x: hidden !important;
-    }
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                min-height: 100% !important;
+                height: auto !important;
+                overflow-x: hidden !important;
+            }
 
-    body {
-        padding: 20px 0 40px !important;
-    }
+            body {
+                padding: 20px 0 40px !important;
+            }
 
-    /* Stack every photo wrapper vertically */
-    .photo-wrapper {
-        position: relative !important;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: auto !important;
-        transform: none !important;
+            .page-heading {
+                margin: 8px 12px 24px;
+            }
 
-        display: block !important;
-        width: 90% !important;
-        max-width: 350px !important;
-        height: auto !important;
+            /* Stack every photo vertically */
 
-        margin: 0 auto 35px !important;
-    }
+            .photo-wrapper {
+                position: relative !important;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                bottom: auto !important;
+                transform: none !important;
 
-    /* Override desktop positioning on every photo */
-    .photo-wrapper img,
-    .photo2,
-    .photo4,
-    .photo33 {
-        position: static !important;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: auto !important;
-        transform: none !important;
+                display: block !important;
+                width: 90% !important;
+                max-width: 350px !important;
+                height: auto !important;
 
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        margin: 0 auto !important;
-    }
+                margin: 0 auto 30px !important;
+            }
 
-}
+            /* Make photos fit the phone screen */
+
+            .photo-wrapper img {
+                position: static !important;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                margin: 0 auto !important;
+            }
+        }
 
     </style>
 </head>
 
 <body>
 
+    <p class="page-heading">★ my photos ★</p>
+
+    <!-- PHOTO 2 -->
     <div class="photo-wrapper" style="left: 5%; top: 15%;">
-        <img class="photo2" src="photo2.jpg">
+        <img class="photo2" src="photo2.jpg" alt="Photo 2">
     </div>
 
+    <!-- PHOTO 4 -->
     <div class="photo-wrapper" style="left: 30%; top: 15%;">
-        <img class="photo4" src="photo4.jpg">
+        <img class="photo4" src="photo4.jpg" alt="Photo 4">
     </div>
 
+    <!-- PHOTO 33 -->
     <div class="photo-wrapper" style="left: 30%; top: 15%;">
-        <img class="photo33" src="photo33.jpg">
+        <img class="photo33" src="photo33.jpg" alt="Photo 33">
     </div>
 
-    </div><br><br>
-
-
+    <!-- ♡ STAR CURSOR TRAIL ♡ -->
 
     <script>
-
         let lastX = 0;
         let lastY = 0;
 
@@ -218,19 +167,9 @@ document.addEventListener("mousemove", function(e) {
             setTimeout(function() {
                 star.remove();
             }, 2550);
+
         });
-
     </script>
-
-</body>
-</html>
-
-
-
-
-
-
-<body>
 
 </body>
 </html>
