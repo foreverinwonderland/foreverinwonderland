@@ -184,49 +184,44 @@
 
     /* ♡ MOBILE LAYOUT ♡ */
 
-    @media screen and (max-width: 600px) {
+   @media screen and (max-width: 600px) {
 
-        html, body {
-            margin: 0;
-            min-height: 100%;
-            height: auto;
-            overflow-x: hidden;
-        }
-
-        body {
-            padding: 20px 0 40px;
-        }
-
-        /* Stack the photos vertically on phones */
-
-        .photo-wrapper {
-            position: relative !important;
-            left: auto !important;
-            top: auto !important;
-
-            width: 90%;
-            max-width: 350px;
-            margin: 0 auto 35px;
-        }
-
-        /* Make every photo fit inside the screen */
-
-        .photo-wrapper img {
-            display: block;
-            width: 100% !important;
-            max-width: 100%;
-            height: auto;
-            margin: 0 auto;
-        }
-
-        /* Keep photo credits positioned correctly */
-
-        .photo-credit {
-            max-width: 90%;
-            box-sizing: border-box;
-        }
-
+    html, body {
+        margin: 0;
+        min-height: 100%;
+        height: auto;
+        overflow-x: hidden;
     }
+
+    body {
+        padding: 20px 0 40px;
+    }
+
+    .photo-wrapper {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 90%;
+        max-width: 350px;
+        margin: 0 auto 35px;
+    }
+
+    .photo-wrapper img {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .photo-credit {
+        max-width: 90%;
+        box-sizing: border-box;
+    }
+
+}
 
     </style>
 </head>
