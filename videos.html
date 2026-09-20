@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>my videos</title>
+
+    <style>
+        
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    </style>
+
+</head>
+
+<script>
+
+    let lastX = 0;
+    let lastY = 0;
+
+    document.addEventListener("mousemove", function(e) {
+
+        const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+
+        if (distance < 25) {
+            return;
+        }
+
+        lastX = e.clientX;
+        lastY = e.clientY;
+
+        const star = document.createElement("div");
+
+        star.innerHTML = Math.random() > 0.5 ? "★" : "✦";
+        star.style.position = "fixed";
+        star.style.left = e.clientX + "px";
+        star.style.top = e.clientY + "px";
+        star.style.pointerEvents = "none";
+        star.style.fontSize = (Math.random() * 8 + 7) + "px";
+        star.style.color = "black";
+        star.style.opacity = "0.8";
+        star.style.transition = "opacity 2.5s, transform 2.5s";
+        star.style.transform = "translate(-50%, -50%)";
+
+        document.body.appendChild(star);
+
+        setTimeout(function() {
+            star.style.opacity = "0";
+            star.style.transform = "translate(-50%, -80%) rotate(30deg)";
+        }, 50);
+
+        setTimeout(function() {
+            star.remove();
+        }, 2550);
+
+    });
+
+</script>
+
+
+<body>
+
+    <p><i>★ my youtube videos ★</i></p>
+    <p><i>★ @here.inwonderland ★</i></p>
+
+    <ul>
+
+        <li>
+            <a href="https://www.youtube.com/watch?v=bs-Nwa0Uwqs" target="_blank">
+                ★ storm (2025)
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.youtube.com/watch?v=cMukgwCvrF8" target="_blank">
+                ★ shallow (2025)
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.youtube.com/watch?v=pdAoLWnfDQ8" target="_blank">
+                ★ glitch (2025)
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.youtube.com/watch?v=z4HV5JNxP18" target="_blank">
+                ★ hacked (2026)
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.youtube.com/watch?v=hUuvsUmIQdE" target="_blank">
+                ★ swans (2026)
+            </a>
+        </li>
+
+    </ul>
+
+
+   

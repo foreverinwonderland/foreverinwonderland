@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<title>menu</title>
+<head>
+    <p><i>★ welcome to wonderland ★ where nothing is as it seems ★ come in, stay a while ★ anything is possible here ★</i></p>
+    <p><i>★ contact: wonder.land5128@gmail.com ★</i></p>
+
+
+    <style>
+        body {
+            cursor: url("littleblackstar.png"), auto;
+            min-height: 100vh;
+        }
+
+        a {
+    cursor: url("littleblackstar.png"), auto;
+    text-decoration: none;
+    color: black;
+}
+    </style>
+
+</head>
+
+<body>
+
+<div style="margin-left: 100px;">
+
+<p style="margin-bottom: 100px;">
+    <a href="visuals.html">
+    <span style="font-size: 80px;">📁</span><br>
+    ★ visuals
+</a>
+</p>
+
+<p style="margin-bottom: 100px;">
+    <a href="photos.html">
+    <span style="font-size: 80px;">📁</span><br>
+    ★ photos
+</a>
+</p>
+
+<p style="margin-bottom: 100px;">
+    <a href="videos.html">
+    <span style="font-size: 80px;">📁</span><br>
+    ★ videos
+</a>
+</p>
+
+<p style="margin-bottom: 100px;">
+    <a href="music.html">
+    <span style="font-size: 80px;">📁</span><br>
+    ★ music
+
+</a>
+</p>
+
+<p style="margin-bottom: 100px;">
+    <a href="other media.html">
+    <span style="font-size: 80px;">📁</span><br>
+    ★ other media
+
+</div>
+
+<script>
+let lastX = 0;
+let lastY = 0;
+
+document.addEventListener("mousemove", function(e) {
+
+    const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+
+    if (distance < 25) {
+        return;
+    }
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+
+    const star = document.createElement("div");
+
+    star.innerHTML = Math.random() > 0.5 ? "★" : "✦";
+    star.style.position = "fixed";
+    star.style.left = e.clientX + "px";
+    star.style.top = e.clientY + "px";
+    star.style.pointerEvents = "none";
+    star.style.fontSize = (Math.random() * 8 + 7) + "px";
+    star.style.color = "black";
+    star.style.opacity = "0.8";
+    star.style.transition = "opacity 2.5s, transform 2.5s";
+    star.style.transform = "translate(-50%, -50%)";
+
+    document.body.appendChild(star);
+
+    setTimeout(function() {
+        star.style.opacity = "0";
+        star.style.transform = "translate(-50%, -80%) rotate(30deg)";
+    }, 50);
+
+    setTimeout(function() {
+        star.remove();
+    }, 2550);
+});
+</script>
+</body>
+
+</html>

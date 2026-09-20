@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>other media</title>
+
+    <style>
+    body {
+        cursor: url("littleblackstar.png"), auto;
+    }
+
+    a {
+        cursor: pointer;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <p><i>★ other media i enjoy ★ movie trailers, clips, live concerts, and more ★</i></p>
+
+    <br><br><br><br><br><br>
+
+    ★ SALEM live at Primavera (2025):
+    <a href="https://www.youtube.com/watch?v=ov_YLlKVx-E" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ PS22 Chorus "Jóga" by Björk:
+    <a href="https://www.youtube.com/watch?v=OKPC-T3jjRg" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ Mkgee live in Toronto (2024):
+    <a href="https://www.youtube.com/watch?v=GwW-EExuKWg" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ "We're All Going to the World's Fair" trailer:
+    <a href="https://www.youtube.com/watch?v=y0AnGfzgh_w" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ "The Sweet East" trailer:
+    <a href="https://www.youtube.com/watch?v=hJgNw9deqtc" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ "Beneath the Skin (1981)":
+    <a href="https://www.youtube.com/watch?v=BcXEJbWkLWE" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ "Rabbits (2002)":
+    <a href="https://www.youtube.com/watch?v=drjQfQtv2BQ" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ DIIV live in Berlin (2024):
+    <a href="https://www.youtube.com/watch?v=49UZ4kZOk24" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ Bowery Electric full album:
+    <a href="https://www.youtube.com/watch?v=C5BsJJrRSmc" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ Electricity [FUCK TV]:
+    <a href="https://www.youtube.com/watch?v=XZAuoIDHk5A" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ FUCK TV:
+    <a href="https://mk9.org/fucktv/" target="_blank">Link</a>
+
+    <br><br><br><br>
+
+    ★ mod. fuck. explosion. (1994):
+    <a href="https://www.youtube.com/watch?v=KHFkyHQ99Yo" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    ★ The Backrooms (Full Series): <a href="https://www.youtube.com/watch?v=7ADTK4kpe7M" target="_blank">YouTube</a>
+
+    <br><br><br><br>
+
+    <script>
+
+        let lastX = 0;
+        let lastY = 0;
+
+        document.addEventListener("mousemove", function(e) {
+
+            const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+
+            if (distance < 25) {
+                return;
+            }
+
+            lastX = e.clientX;
+            lastY = e.clientY;
+
+            const star = document.createElement("div");
+
+            star.innerHTML = Math.random() > 0.5 ? "★" : "✦";
+
+            star.style.position = "fixed";
+            star.style.left = e.clientX + "px";
+            star.style.top = e.clientY + "px";
+            star.style.pointerEvents = "none";
+            star.style.fontSize = (Math.random() * 8 + 7) + "px";
+            star.style.color = "black";
+            star.style.opacity = "0.8";
+            star.style.transition = "opacity 2.5s, transform 2.5s";
+            star.style.transform = "translate(-50%, -50%)";
+
+            document.body.appendChild(star);
+
+            setTimeout(function() {
+
+                star.style.opacity = "0";
+                star.style.transform = "translate(-50%, -80%) rotate(30deg)";
+
+            }, 50);
+
+            setTimeout(function() {
+
+                star.remove();
+
+            }, 2550);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
