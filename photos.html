@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>my photos</title>
 
     <link rel="stylesheet" href="style.css">
@@ -20,51 +22,46 @@
         }
 
         /* PAGE HEADING */
+
         .page-heading {
             margin: 8px;
             font-style: italic;
         }
 
-        /* DESKTOP PHOTO ARRANGEMENT */
+        /* ♡ DESKTOP PHOTO ARRANGEMENT ♡ */
 
-       /* DESKTOP PHOTO ARRANGEMENT */
+        .desktop-photos {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 100px;
+        }
 
-.desktop-photos {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 60px;
-    margin-top: 100px;
-}
+        .photo-wrapper {
+            position: static;
+        }
 
-.photo-wrapper {
-    position: static;
-}
+        .photo2 {
+            display: block;
+            width: 270px;
+            height: auto;
+        }
 
-.photo2 {
-    display: block;
-    width: 270px;
-    height: auto;
-}
+        .photo4 {
+            display: block;
+            width: 222px;
+            height: auto;
+        }
 
-.photo4 {
-    display: block;
-    width: 222px;
-    height: auto;
-}
-
-.photo33 {
-    display: block;
-    width: 290px;
-    height: auto;
-}
+        .photo33 {
+            display: block;
+            width: 290px;
+            height: auto;
+        }
 
         /* ♡ MOBILE LAYOUT ♡ */
-
-.desktop-photos {
-    display: block;
-    margin-top: 0;
-}
 
         @media screen and (max-width: 600px) {
 
@@ -84,7 +81,12 @@
                 margin: 8px 12px 24px;
             }
 
-            /* Stack every photo vertically */
+            /* Stack the photos vertically */
+
+            .desktop-photos {
+                display: block;
+                margin-top: 0;
+            }
 
             .photo-wrapper {
                 position: relative !important;
@@ -119,27 +121,33 @@
                 margin: 0 auto !important;
             }
         }
-
     </style>
+
 </head>
 
 <body>
 
     <p class="page-heading">★ my photos ★</p>
 
-    <!-- PHOTO 2 -->
-    <div class="photo-wrapper" style="left: 5%; top: 15%;">
-        <img class="photo2" src="photo2.jpg" alt="Photo 2">
-    </div>
+    <!-- ♡ PHOTOS ♡ -->
 
-    <!-- PHOTO 4 -->
-    <div class="photo-wrapper" style="left: 30%; top: 15%;">
-        <img class="photo4" src="photo4.jpg" alt="Photo 4">
-    </div>
+    <div class="desktop-photos">
 
-    <!-- PHOTO 33 -->
-    <div class="photo-wrapper" style="left: 45%; top: 15%;">
-        <img class="photo33" src="photo33.jpg" alt="Photo 33">
+        <!-- PHOTO 2 -->
+        <div class="photo-wrapper">
+            <img class="photo2" src="photo2.jpg" alt="Photo 2">
+        </div>
+
+        <!-- PHOTO 4 -->
+        <div class="photo-wrapper">
+            <img class="photo4" src="photo4.jpg" alt="Photo 4">
+        </div>
+
+        <!-- PHOTO 33 -->
+        <div class="photo-wrapper">
+            <img class="photo33" src="photo33.jpg" alt="Photo 33">
+        </div>
+
     </div>
 
     <!-- ♡ STAR CURSOR TRAIL ♡ -->
@@ -187,4 +195,5 @@
     </script>
 
 </body>
+
 </html>
