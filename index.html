@@ -17,34 +17,39 @@
             cursor: url("littleblackstar.png"), auto;
         }
 
-        /* ♡ CENTER THE CAMERA ♡ */
+       /* ♡ CENTER THE CAMERA ♡ */
 
-        .camera {
+.camera-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.camera-container a {
     display: block;
     width: 800px;
     max-width: 90%;
-    height: auto;
-    }
+}
 
-       .camera {
+.camera {
     display: block;
-    width: 800px;
-    max-width: 90%;
+    width: 100%;
     height: auto;
-    }
+}
 
-        /* ♡ MOBILE ADJUSTMENT ♡ */
+/* ♡ MOBILE ADJUSTMENT ♡ */
 
-        @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .camera-container {
         margin-top: 60px;
     }
 
-    .camera {
+    .camera-container a {
         width: 90%;
         max-width: 400px;
     }
-    }
+}
 
     </style>
 
